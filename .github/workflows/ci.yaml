@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout SCM
+        uses: actions/checkout@v4
+
+      - name: Run unit test
+        run: pytest
